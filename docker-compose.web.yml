@@ -1,0 +1,34 @@
+version: '3.4'
+
+# PRODUCTION CONFIG: use it like this 'docker-compose -f docker-compose.yml -f docker-compose.web.yml up'
+# See: https://docs.docker.com/compose/extends/
+
+x-common: &common
+  build: .
+  env_file:
+    - .env
+  volumes:
+    - ./apps:/src/apps
+    - ./memo_backend:/src/memo_backend
+    - ./htmlcov:/src/htmlcov
+    - ./scripts:/src/scripts
+
+services:
+  nginx:
+    image: nginx:1.19.10-alpine
+    container_name: memo_backend-nginx
+    restart: on-failure
+    depends_on:
+        - web
+    volumes:
+      - static:/src/memo_backend/static
+      - media:/src/memo_backend/media
+      # Read only config volume
+      - ./memo_backend/settings/nginx.conf:/etc/nginx/conf.d:ro
+    ports:
+      - "80:80"
+      - "8000:8000"
+
+  web:
+    <<: *common
+    command: [ "./scripts/wait-for-it.sh", "database:5432", "--", "./scripts/dev-entrypoint.sh" ]

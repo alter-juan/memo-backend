@@ -1,0 +1,61 @@
+# Last update: Upgrade Django package
+
+# Allows you to utilize the 12factor inspired DATABASE_URL environment variable
+dj-database-url==0.5.0
+
+# Python WEB framework
+Django==3.2.12
+
+# Allows in-browser requests to your Django application from other origins
+django-cors-headers==3.10.1
+
+# A configurable set of panels that display various debug information about the current request/response
+django-debug-toolbar==3.2.1
+
+# Reusable Django application allowing users to declaratively add dynamic QuerySet filtering from URL parameters
+django-filter==21.1
+
+# A jazzy skin for the Django admin interface
+django-grappelli==2.15.3
+
+# Django application to retrieve user's IP address
+django-ipware==4.0.2
+
+# Framework for adding two-factor authentication to Django using one-time passwords
+django_otp==1.0.3
+
+# Set the draft security HTTP header Permissions-Policy (previously Feature-Policy) on your Django app.
+django-permissions-policy==4.7.0
+
+# Collection of custom storage backends for Django
+django-storages==1.9.1
+
+# REST Framework
+djangorestframework==3.13.1
+
+# REST Framework JWT Authentication
+djangorestframework-simplejwt==4.4.0
+
+# Docker Compose requires Python 3.6 or later
+docker-compose==1.26.2
+
+# Automated generation of real Swagger/OpenAPI 2.0 schemas from Django Rest Framework code
+drf-yasg==1.20.0
+
+# Python WSGI HTTP Server
+gunicorn==20.0.4
+
+# JSON Web Token based authentication for Django REST framework
+drf-jwt==1.13.4
+
+# PostgreSQL python client
+psycopg2==2.8.5
+
+# A pure-Python implementation of the AES
+pyaes==1.6.1
+
+# Python implementation of RFC 7519
+pyjwt==1.7.1
+
+# Python client for Sentry
+sentry-sdk==1.5.2

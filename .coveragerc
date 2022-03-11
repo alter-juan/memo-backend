@@ -1,0 +1,11 @@
+[run]
+source = .
+omit =
+    */migrations/*
+    */htmlcov/*
+    */test.py
+    */tests.py
+    */tests/*
+    memo_backend/asgi.py
+    memo_backend/wsgi.py
+    memo_backend/settings/production.py

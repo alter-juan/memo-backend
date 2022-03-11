@@ -1,0 +1,15 @@
+version: '3.4'
+
+# BASE CONFIG: applies to all environments. It does not work alone
+
+services:
+  web:
+    image: memo_backend:latest
+    container_name: memo_backend-web
+    volumes:
+      - static:/src/memo_backend/static
+      - media:/src/memo_backend/media
+
+volumes:
+  static:
+  media:
